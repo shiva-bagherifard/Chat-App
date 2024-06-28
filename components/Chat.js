@@ -7,9 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const Chat = ({route, navigation, db}) => {
   const { username, background, userID } = route.params;
     const [messages, setMessages] = useState([]);
-    // const collectionName = "messages";
     const onSend = (newMessages) => {
-        // setMessages(previousMessages => GiftedChat.append(previousMessages, newMessages))
         addDoc(collection(db, "messages"), newMessages[0])
       }
 
