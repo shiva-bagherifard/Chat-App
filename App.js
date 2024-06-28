@@ -9,7 +9,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 import { LogBox } from 'react-native';
-LogBox.ignoreLogs();
+LogBox.ignoreLogs([]);
 
 // Create the navigator
 const Stack = createNativeStackNavigator();

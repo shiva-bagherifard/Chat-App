@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { StyleSheet, View, Platform, KeyboardAvoidingView } from 'react-native';
 import { Bubble, GiftedChat } from "react-native-gifted-chat";
 import { collection, addDoc, onSnapshot, query, orderBy } from "firebase/firestore";
-
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Chat = ({route, navigation, db}) => {
   const { username, background, userID } = route.params;
@@ -34,10 +33,10 @@ const Chat = ({route, navigation, db}) => {
       // Create a query to get the "messages" collection from the Firestore database
       const q = query(collection(db, "messages"), orderBy("createdAt", "desc"));
       // This function will be called whenever there are changes in the collection.
-      const unsubMessages = onSnapshot(q, (documentsSnapshot) => {
+      const unsubMessages = onSnapshot(q, (docs) => {
         let newMessages = [];
         // Iterate through each document in the snapshot
-        documentsSnapshot.forEach(doc => {
+        docs.forEach(doc => {
           newMessages.push({ id: doc.id, ...doc.data(),  createdAt: new Date(doc.data().createdAt.toMillis()), })
         });
         setMessages(newMessages);
