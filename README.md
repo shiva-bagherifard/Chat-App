@@ -1,35 +1,7 @@
-# Objective:
-To build a chat app for mobile devices using React Native. The app will
-provide users with a chat interface and options to share images and their
-location.
-
-# The 5 Ws:
-1. Who—The users of the mobile chat app. These could be friends, family or other
-students on this course. Your codebase will be used by other developers working on
-the product.
-2. What—A native chat app built with React Native, as well as all the relevant
-documentation.
-3. When—Whenever users of your chat app want to communicate with each other.
-4. Where—The app will be optimized for both Android and iOS devices. You will use
-Expo to develop the app and Google Firestore to store the chat messages.
-5. Why—Mobile chat apps are among the most commonly downloaded and used apps
-in the world, so knowing how to build a chat app is an indispensable skill. The app
-will demonstrate your React Native development skills.
+# About Chat App with React Native:
+To build a chat app for mobile devices using React Native. The app will provide users with a chat interface and options to share images and their location. It works on both iOS and Android devices and utilizes Google Firestore/Firebase for storing messages and images. Guest authentication is handled via Google Firebase authentication.
 
 # Features and Requirements:
-## User Stories:
-- As a new user, I want to be able to easily enter a chat room so I can quickly start talking to my
-friends and family.
-- As a user, I want to be able to send messages to my friends and family members to exchange
-the latest news.
-- As a user, I want to send images to my friends to show them what I’m currently doing.
-- As a user, I want to share my location with my friends to show them where I am.
-- As a user, I want to be able to read my messages offline so I can reread conversations at any
-time.
-- As a user with a visual impairment, I want to use a chat app that is compatible with a screen
-reader so that I can engage with a chat interface.
-
-
 ## Key Features:
 - A page where users can enter their name and choose a background color for the chat screen
 before joining the chat.
@@ -38,17 +10,49 @@ before joining the chat.
 and location data.
 - Data gets stored online and offline.
 
-## Technical Requirements:
-- The app must be written in React Native.
-- The app must be developed using Expo.
-- The app must be styled according to the given screen design.
-- Chat conversations must be stored in Google Firestore Database.
-- The app must authenticate users anonymously via Google Firebase authentication.
-- Chat conversations must be stored locally.
-- The app must let users pick and send images from the phone’s image library.
-- The app must let users take pictures with the device’s camera app, and send them.
-- The app must store images in Firebase Cloud Storage.
-- The app must be able to read the user’s location data.
-- Location data must be sent via the chat in a map view.
-- The chat interface and functionality must be created using the Gifted Chat library.
-- The app’s codebase must contain comments
+## Technologies Used:
+- React Native
+- Expo
+- Expo ImagePicker
+- Expo Location
+- Google Firestore/Firebase
+- Gifted Chat Library
+- Android Studio
+
+## Dependencies:
+- @react-navigation/native: ^6.1.17
+- @react-navigation/native-stack: ^6.9.26
+- expo: ~50.0.13
+- expo-status-bar: ~1.11.1
+- firebase: ^10.3.1
+- react: "18.2.0
+- react-native: 0.73.5
+- react-native-gifted-chat: ^2.4.0
+- react-native-safe-area-context: 4.8.2
+- react-native-screens: ~3.29.0
+- @react-native-async-storage/async-storage: 1.21.0
+- @react-native-community/netinfo: 11.1.0
+- expo-image-picker: ~14.7.1
+- expo-location: ~16.5.5
+- react-native-maps: 1.10.0
+
+### Prerequisites
+- Node.js
+
+### Google Firestore/Firebase
+- create an account and a new project
+- obtain the configuration code, and add it to App.js:
+- set up the database under build --> Firestore Database
+- activate storage
+- change rules to: `allow read, write: if true`
+
+## Start the expo project
+- `npx expo start`
+
+## Testing Options
+- download and connect the expo app on your mobile device
+- Android Studio (android)
+- Xcode (iOS)
+
+## Author
+- Shiva Bagherifard
